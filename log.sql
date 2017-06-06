@@ -17,11 +17,11 @@
 	# articles.slug = log.path OR rather articles./articles/slug = log.path
 	# articles.title, and number_of_views needs to be the result in order from greatest to least limit 3
 
-	select title from articles order by id desc limit 3; # to show the article name in order, need to substitute id for number_of_views
-	select concat ('/article/', slug) from articles limit 3; # concatenate articles.slug so it can join with log.path
-	select path, count(path) from log group by path order by count(path) desc limit 3; # number_of_views
+	# select title from articles order by id desc limit 3; # to show the article name in order, need to substitute id for number_of_views
+	# select concat ('/article/', slug) from articles limit 3; # concatenate articles.slug so it can join with log.path
+	# select path, count(path) from log group by path order by count(path) desc limit 3; # number_of_views
 
-	select title, count(title) as number_of_views
+	select title, count(title)
 	from log 
 		join articles on concat('/article/', slug) = path 
 	group by title
@@ -33,11 +33,11 @@
 	# articles.slug = log.path OR rather articles./articles/slug = log.path
 	# author.name, and number_of_total_views to be in the result in order from greatest to least limit 3
 
-	select name, count(name) as number_of_total_views
-	from log 
-		join articles on concat('/article/', slug) = path 
-	from authors
-		join articles on authors.name = articles.id
+	select name, count(name)
+	from(select *
+		from log 
+			join articles on concat('/article/', slug) = path) popular_articles
+		join authors on author = authors.id
 	group by name
 	order by count(name) desc
 	limit 3;
