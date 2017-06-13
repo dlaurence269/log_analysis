@@ -52,6 +52,7 @@ def get_high_errors():
     join(select time::date as date, count(status)
       from log
       group by date) as total_statuses on error_statuses.date = total_statuses.date
+    where cast(error_statuses.count as decimal(18,1))/cast(total_statuses.count as decimal(18,1)) > .01
     order by final_count desc;
       """)
   high_errors = c.fetchall()

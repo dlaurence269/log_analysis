@@ -105,15 +105,16 @@
 		order by error_statuses.count desc;
 """
 	select
-	error_statuses.date, cast(error_statuses.count as decimal(18,1))/cast(total_statuses.count as decimal(18,1)) as final_count
-	from(select time::date as date, count(status)
-		from log
-		where status='404 NOT FOUND'
-		group by date) as error_statuses
-	join(select time::date as date, count(status)
-		from log
-		group by date) as total_statuses on error_statuses.date = total_statuses.date
-	order by final_count desc;
+    error_statuses.date, cast(error_statuses.count as decimal(18,1))/cast(total_statuses.count as decimal(18,1)) as final_count
+    from(select time::date as date, count(status)
+      from log
+      where status='404 NOT FOUND'
+      group by date) as error_statuses
+    join(select time::date as date, count(status)
+      from log
+      group by date) as total_statuses on error_statuses.date = total_statuses.date
+    where cast(error_statuses.count as decimal(18,1))/cast(total_statuses.count as decimal(18,1)) > .01
+    order by final_count desc;
 
 
 
