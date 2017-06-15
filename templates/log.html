@@ -6,17 +6,21 @@
 
 	<body>
 		<form>
-			1. What are the most popular three articles of all time?
+			<h4> 1. What are the most popular three articles of all time? </h4>
 			<br>
-    		<p> {{ popular_articles }} </p> <!--change to display the result of the coorespoding query-->
+    			<ul> {{ first_article }}  -- {{ first_article_count }} views </ul>
+    			<ul> {{ second_article }}  -- {{ second_article_count }} views </ul>
+    			<ul> {{ third_article }}  -- {{ third_article_count }} views </ul>
     		<br>
-    		2. Who are the most popular article authors of all time?
+    		<h4> 2. Who are the most popular article authors of all time? </h4>
     		<br>
-    		<p> {{ popular_authors }} </p> <!--change to display the result of the coorespoding query-->
+    			<ul> {{ first_author }}  -- {{ first_author_count }} views </ul>
+    			<ul> {{ second_author }}  -- {{ second_author_count }} views </ul>
+    			<ul> {{ third_author }}  -- {{ third_author_count }} views </ul>
     		<br>
-    		3. On which days did more than 1% of requests lead to errors?
+    		<h4> 3. On which days did more than 1% of requests lead to errors? </h4>
     		<br>
-    		<p> {{ high_errors }} </p> <!--change to display the result of the coorespoding query-->
+    			<ul> {{ first_high_error }}  -- {{ first_high_error_count }} errors </ul>
 		</form>
 	</body>
 </html>
