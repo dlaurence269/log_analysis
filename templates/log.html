@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Log Analysis Project</title>
-	</head>
+    <head>
+    <title>Log Analysis Project</title>
+    </head>
 
-	<body>
-		<form>
-			<h4> 1. What are the most popular three articles of all time? </h4>
-			<br>
-    			{% for title, count in popular_articles: %}
-    				<li>{{title.title()}} -- {{count}}</li>
-				{% endfor %}
-    		<br>
-    		<h4> 2. Who are the most popular article authors of all time? </h4>
-    		<br>
-    			{% for name, count in popular_authors: %}
-    				<li>{{name}} -- {{count}}</li>
-				{% endfor %}
-    		<br>
-    		<h4> 3. On which days did more than 1% of requests lead to errors? </h4>
-    		<br>
-    			{% for date, count in high_errors: %}
-    				<li>{{date.strftime("%B %d, %Y")}} -- {{('%0.2f' % (count*100)|float)}}%</li>
-				{% endfor %}
-		</form>
-	</body>
+    <body>
+        <form>
+            <h4> 1. What are the most popular three articles of all time? </h4>
+            <br>
+                {% for title, count in popular_articles: %}
+                    <li>"{{title.title()}}" - {{"{:,}".format(count)}} views</li>
+                {% endfor %}
+            <br>
+            <h4> 2. Who are the most popular article authors of all time? </h4>
+            <br>
+                {% for name, count in popular_authors: %}
+                    <li>{{name}} - {{"{:,}".format(count)}} view</li>
+                {% endfor %}
+            <br>
+            <h4> 3. On which days did more than 1% of requests lead to errors? </h4>
+            <br>
+                {% for date, count in high_errors: %}
+                <li>{{date.strftime("%B %d, %Y")}} - {{('%0.2f' % (count*100)|float)}}% errors</li>
+                {% endfor %}
+        </form>
+    </body>
 </html>
