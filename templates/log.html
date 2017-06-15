@@ -8,19 +8,21 @@
 		<form>
 			<h4> 1. What are the most popular three articles of all time? </h4>
 			<br>
-    			<ul> {{ first_article }}  -- {{ first_article_count }} views </ul>
-    			<ul> {{ second_article }}  -- {{ second_article_count }} views </ul>
-    			<ul> {{ third_article }}  -- {{ third_article_count }} views </ul>
+    			{% for title, count in popular_articles: %}
+    				<li>{{title.title()}} -- {{count}}</li>
+				{% endfor %}
     		<br>
     		<h4> 2. Who are the most popular article authors of all time? </h4>
     		<br>
-    			<ul> {{ first_author }}  -- {{ first_author_count }} views </ul>
-    			<ul> {{ second_author }}  -- {{ second_author_count }} views </ul>
-    			<ul> {{ third_author }}  -- {{ third_author_count }} views </ul>
+    			{% for name, count in popular_authors: %}
+    				<li>{{name}} -- {{count}}</li>
+				{% endfor %}
     		<br>
     		<h4> 3. On which days did more than 1% of requests lead to errors? </h4>
     		<br>
-    			<ul> {{ first_high_error }}  -- {{ first_high_error_count }} errors </ul>
+    			{% for date, count in high_errors: %}
+    				<li>{{date.strftime("%B %d, %Y")}} -- {{('%0.2f' % (count*100)|float)}}%</li>
+				{% endfor %}
 		</form>
 	</body>
 </html>

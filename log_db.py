@@ -1,5 +1,4 @@
 #forumdb equivalent from previous project
-
 import psycopg2, bleach
 
 DBNAME = "news"
