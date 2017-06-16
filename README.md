@@ -19,3 +19,8 @@
 * From the command window / bash, navigate to the log_analysis folder and enter in "python log.py".
 * You will now be hosting this page over port 8080.
 * Finally you can open your broswer of choice and navigate to localhost:8080 and you'll see the log page with the three questions and the respective answers displayed.
+
+# Having problems running the code?
+* I used Python 3 for this project as well as the psycopg2 library, which will need to be downloaded if you don't have it.
+* That can easily be done with $ pip install psycopg2.
+* Page still not displaying? Don't forget to have the "news" database on your device, whether it be in a virtual machine, or on your local computer.
