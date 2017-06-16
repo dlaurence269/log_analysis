@@ -24,3 +24,23 @@
 * I used Python 3 for this project as well as the psycopg2 library, which will need to be downloaded if you don't have it.
 * That can easily be done with $ pip install psycopg2.
 * Page still not displaying? Don't forget to have the "news" database on your device, whether it be in a virtual machine, or on your local computer.
+
+# Example Output:
+#### 1. What are the most popular three articles of all time?
+
+
+* "Candidate Is Jerk, Alleges Rival" - 338,647 views
+* "Bears Love Berries, Alleges Bear" - 253,801 views
+* "Bad Things Gone, Say Good People" - 170,098 views
+
+#### 2. Who are the most popular article authors of all time?
+
+
+* Ursula La Multa - 507,594 views
+* Rudolf von Treppenwitz - 423,457 views
+* Anonymous Contributor - 170,098 views
+
+#### 3. On which days did more than 1% of requests lead to errors?
+
+
+* July 17, 2016 - 2.26% errors
