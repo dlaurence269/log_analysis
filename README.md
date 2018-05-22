@@ -1,16 +1,15 @@
 # Purpose
-* log_analysis is a project from Udacity's Full Stack Nanodegree.
-* This is our first project that can be characterized as "Full Stack".
-* Everything we did we created from scratch with the exception of the database itself.
-* We were instructed to use SQL, Python, and HTML (with templating) in order to create a simple page that acts as a "log".
-* This page is supposed to be a clear as possible while remaining simple, as if it were being read via email rather than a webpage.
+* log_analysis is the first project that can be characterized as "Full Stack" from Udacity, an online programming educator.
+* Udacity provided the "news" database for this log_analysis project.
+* This project uses SQL, Python, and HTML (with templating) in order to create a simple page that acts as a "log".
+* This page is supposed as if it were being read via email rather than a webpage.
 * This log will display three results queried from a database called "news":
     1. What are the most popular three articles of all time?
     2. Who are the most popular article authors of all time?
     3. On which days did more than 1% of requests lead to errors?
 
 # Running the Code
-* The assumption for running this code is that it is being done by someone at Udacity who already has the "news" database, and therefore we are not to include it as part of our code submission.
+* It is assumed that this project is being checked by someone at Udacity who already has the "news" database, and therefore it is not to be included as part of the code submission.
 * Therefore one must simply download the following files which are bundled together in the log_analysis folder:
     1. log.py
     2. log_db.py
@@ -21,7 +20,7 @@
 * Finally you can open your broswer of choice and navigate to localhost:8080 and you'll see the log page with the three questions and the respective answers displayed.
 
 # Troubleshooting
-* I used Python 3 for this project as well as the psycopg2 library, which will need to be downloaded if you don't have it.
+* This project uses Python 3 as well as the psycopg2 library, which will need to be downloaded if you don't have it.
 * That can easily be done with $ pip install psycopg2.
 * Page still not displaying? Don't forget to have the "news" database on your device, whether it be in a virtual machine, or on your local computer.
 
